@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 float add(float a, float b,float c,float d,float e,float f);
 int minus(int a, int b);    
 int yay(int o, int z);
@@ -7,6 +8,8 @@ int multiply(int one, int two);
 float divide(float poop, float pee);
 int speed(int distance,int time);
 float hourhandspeedpermin();
+float minuitehandspeedpermin();
+float clockangles(float minuite, float hour);
 int main()
 {
     //int a = 0;
@@ -18,6 +21,8 @@ int main()
     std::cout << divide(99564645,65485) << std::endl;
     std::cout << speed(20,5) << " miles per minuite" << std::endl;
     std::cout << hourhandspeedpermin()<<" degree per min" << std::endl;
+    std::cout << minuitehandspeedpermin() << " degree per min" << std::endl;
+    std::cout << clockangles(1, 5) << " angle at 01:5" << std::endl;
 }
 float add(float a, float b, float c, float d, float e, float f)
 {
@@ -58,5 +63,15 @@ int speed(int distance,int time)
 float hourhandspeedpermin()
 {
     return (float) 360 / 720;
-
+}
+float minuitehandspeedpermin()
+{
+    return (float)360 / 60;
+}
+float clockangles(float minuite, float hour)
+{
+    float hd = hourhandspeedpermin() * (hour * 60 + minuite);
+    int md = minuitehandspeedpermin() * (hour * 60 + minuite);
+    md = md % 360;
+    return fabs(md - hd);
 }
