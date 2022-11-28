@@ -5,15 +5,15 @@ int minus(int a, int b);
 int yay(int o, int z);
 float go(float m, float x, float y);
 int multiply(int one, int two);
-float divide(float poop, float pee);
+float divide(float a, float b);
 int speed(int distance,int time);
 float hourhandspeedpermin();
 float minuitehandspeedpermin();
 float clockangles(float minuite, float hour);
-int main()
+int main(int argc, char** argv)
 {
-    //int a = 0;
-    std::cout << "mom sucks and pees laalalalala ni niaoniao" <<  add (5,4,7,8,6,10) << std::endl;
+    std::cout << argc<< " " << argv[0] << " " << argv[1]<< std::endl;
+    std::cout << " hi " <<  add (5,4,7,8,6,10) << std::endl;
     std::cout << minus(4, 5) << std::endl;
     std::cout << yay(9, 7) << std::endl;
     std::cout << go(9, 8,999) << std::endl;
@@ -49,11 +49,13 @@ int multiply(int one,int two)
     std::cout << " multiply" << std::endl;
     return one * two;
 }
-float divide(float poop, float pee)
+float divide(float a, float b)
 {
-    std::cout << " divide my poop and pee loser" << std::endl;
-    return pee / poop;
+    std::cout << " divide" << std::endl;
+    return a / b;
 }
+
+
 int speed(int distance,int time)
 {
 
