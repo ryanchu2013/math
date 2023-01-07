@@ -1,5 +1,6 @@
 #include <iostream>
 #include <math.h>
+#include <string.h>
 float add(float a, float b,float c,float d,float e,float f);
 int minus(int a, int b);    
 int yay(int o, int z);
@@ -12,7 +13,6 @@ float minuitehandspeedpermin();
 float clockangles(float minuite, float hour);
 int main(int argc, char** argv)
 {
-    std::cout << argc<< " " << argv[0] << " " << argv[1]<< std::endl;
     std::cout << " hi " <<  add (5,4,7,8,6,10) << std::endl;
     std::cout << minus(4, 5) << std::endl;
     std::cout << yay(9, 7) << std::endl;
@@ -22,7 +22,10 @@ int main(int argc, char** argv)
     std::cout << speed(20,5) << " miles per minuite" << std::endl;
     std::cout << hourhandspeedpermin()<<" degree per min" << std::endl;
     std::cout << minuitehandspeedpermin() << " degree per min" << std::endl;
-    std::cout << clockangles(1, 5) << " angle at 01:5" << std::endl;
+    if (strcmp(argv[1], "ca")==0)
+    {
+        std::cout << clockangles(1, 5) << " angle at 01:5" << std::endl;
+    }
 }
 float add(float a, float b, float c, float d, float e, float f)
 {
